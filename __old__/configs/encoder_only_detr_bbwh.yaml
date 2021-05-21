@@ -1,0 +1,38 @@
+MODEL:
+  DETECTOR:
+    TYPE: "EncoderOnlyDETR"
+
+  DETECTION_HEADER:
+    BOX_FORMAT: "bcxbcywh"
+
+    # NUM_OBJ_CLASS: 100 # 150
+    # NUM_REL_CLASS: 70 # 50
+    NUM_OBJ_CLASS: 150
+    NUM_REL_CLASS: 50
+
+LOSS:
+  OD_ONLY: True
+
+# DATASETS:
+#   TRAIN: ("VRD_train", ) # ("VG_stanford_filtered_with_attribute_train", )
+#   VAL: ("VRD_val", ) # ("VG_stanford_filtered_with_attribute_val", )
+#   TEST: ("VRD_test", ) # ("VG_stanford_filtered_with_attribute_test", )
+
+DATASETS:
+  TRAIN: ("VG_stanford_filtered_with_attribute_train", )
+  VAL: ("VG_stanford_filtered_with_attribute_test", )
+  TEST: ("VG_stanford_filtered_with_attribute_test", )
+
+SOLVER:
+  IMS_PER_BATCH: 4
+  LOG_PERIOD: 10
+  VISUALIZE_PERIOD: 2000
+  VAL_PERIOD: 100000
+  CHECKPOINT_PERIOD: 2
+  MAX_EPOCHS: 50
+  LR_DROP: 30
+
+TEST:
+  IMS_PER_BATCH: 4
+
+OUTPUT_DIR: "/p300/projects/scene_graph/sggtr/outputs/full_vg_encoder_only_detr_bbwh"

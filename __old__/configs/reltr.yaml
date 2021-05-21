@@ -1,0 +1,30 @@
+MODEL:
+  DETECTOR:
+    TYPE: "RELTR"
+    ENC_LAYERS: 6
+    DEC_LAYERS: 6
+
+  DETECTION_HEADER:
+    BOX_FORMAT: "cxcywh"
+    NUM_OBJ_CLASS: 100 # 150
+    NUM_REL_CLASS: 70 # 50
+
+LOSS:
+  OD_ONLY: False
+  SGG_ONLY: False
+
+DATASETS:
+  TRAIN: ("VRD_train", ) # ("VG_stanford_filtered_with_attribute_train", )
+  VAL: ("VRD_val", ) # ("VG_stanford_filtered_with_attribute_val", )
+  TEST: ("VRD_test", ) # ("VG_stanford_filtered_with_attribute_test", )
+
+SOLVER:
+  IMS_PER_BATCH: 9
+  LOG_PERIOD: 10
+  VISUALIZE_PERIOD: 300
+  VAL_PERIOD: 100000000
+  CHECKPOINT_PERIOD: 5
+  MAX_EPOCHS: 500
+  LR_DROP: 400
+
+OUTPUT_DIR: "/p300/projects/scene_graph/sggtr/outputs/full_vrd_reltr"

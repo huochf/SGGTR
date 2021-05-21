@@ -1,0 +1,38 @@
+MODEL:
+  PRETRAINED: ''
+  DETECTOR:
+    TYPE: "SGGTRWithEXKnowledge"
+    ENC_LAYERS: 5
+    DEC_LAYERS: 5
+
+  DETECTION_HEADER:
+    BOX_FORMAT: "bcxbcywh"
+    NUM_OBJ_CLASS: 150
+    NUM_REL_CLASS: 50
+
+LOSS:
+  OD_ONLY: False
+  SGG_ONLY: False
+  REL_CLS_COEF: 2
+
+  NO_REL_CLS_WEIGHT: 0.01
+
+DATASETS:
+  TRAIN: ("VG_stanford_filtered_with_attribute_train", )
+  VAL: ("VG_stanford_filtered_with_attribute_test", )
+  TEST: ("VG_stanford_filtered_with_attribute_test", )
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  LOG_PERIOD: 10
+  VISUALIZE_PERIOD: 1000
+  VAL_PERIOD: 100000000
+  CHECKPOINT_PERIOD: 2
+  MAX_EPOCHS: 70
+  LR_DROP: 60
+  LR: 5e-5
+
+TEST:
+  IMS_PER_BATCH: 4
+
+OUTPUT_DIR: "/p300/projects/scene_graph/sggtr/outputs/full_vg_sggtr_5_with_exknowledge"

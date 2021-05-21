@@ -1,0 +1,41 @@
+MODEL:
+  PRETRAINED: ''
+  DETECTOR:
+    TYPE: "SGGTRSGGOnly"
+    ENC_LAYERS: 5
+    DEC_LAYERS: 5
+    NUM_OBJ_QUERY: 50
+    NUM_HIDDEN_REL_QUERY: 50
+
+  DETECTION_HEADER:
+    BOX_FORMAT: "bcxbcywh"
+    NUM_OBJ_CLASS: 90
+    NUM_REL_CLASS: 117 # 117
+
+INPUT:
+  USE_DETR_AUG: True
+
+LOSS:
+  REL_CLS_COEF: 1
+  NO_REL_CLS_WEIGHT: 0.1
+  REL_MULTI_LABEL: True
+
+DATASETS:
+  TRAIN: ("HICO_train", ) # ("VG_stanford_filtered_with_attribute_train", )
+  VAL: ("HICO_train", ) # ("VG_stanford_filtered_with_attribute_val", )
+  TEST: ("HICO_test", ) # ("VG_stanford_filtered_with_attribute_test", )
+
+SOLVER:
+  IMS_PER_BATCH: 12
+  LOG_PERIOD: 10
+  VISUALIZE_PERIOD: 1000
+  VAL_PERIOD: 100000000
+  CHECKPOINT_PERIOD: 2
+  MAX_EPOCHS: 100
+  LR_DROP: 80
+  LR: 5e-5
+
+TEST:
+  IMS_PER_BATCH: 4
+
+OUTPUT_DIR: "/p300/projects/scene_graph/sggtr/outputs/full_hico_sggtr_sgg_only_e5d5_multi_label_aug"
