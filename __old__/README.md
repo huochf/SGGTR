@@ -10,8 +10,11 @@ This code is wrote based [scene-graph-benchmark](https://github.com/KaihuaTang/S
 
 # Performance
 
+|       |       |       |       |       |       |       |
+| ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 |       | R@20  | R@50  | R@100 | R@20  | R@50  | R@100 |
 | SGGTR | 18.75 | 24.78 | 28.93 | 20.57 | 28.12 | 33.52 |
+
 
 
 Training logs can be found [here](https://github.com/MoChen-bop/SGGTR/blob/main/__old__/pdf/experiments.pdf).
