@@ -17,7 +17,7 @@ This code is wrote based [scene-graph-benchmark](https://github.com/KaihuaTang/S
 
 
 
-Training logs can be found [here](https://github.com/MoChen-bop/SGGTR/blob/main/__old__/pdf/experiments.pdf).
+Training logs can be found [here](https://nbviewer.jupyter.org/github/MoChen-bop/SGGTR/blob/main/__old__/pdf/experiments.pdf).
 
 # Visualized Scene Graphs
 
