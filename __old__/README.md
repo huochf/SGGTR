@@ -4,9 +4,18 @@ This code is for the [thesis](https://nbviewer.jupyter.org/github/MoChen-bop/SGG
 
 # Introduction
 
-**SGGTR** is an end-to-end model for Scene Graph Generation using TRansformer. Its structure is based on [DETR]().
+**SGGTR** is an end-to-end model for Scene Graph Generation using TRansformer. Its structure is based on [DETR](https://arxiv.org/abs/2005.12872).
 
 ![main_pipeline](images/main_pipeline.png)
+
+# Performance
+|       |       |       |       |       |       |       |
+| ----- | with graph constraint | with no graph constr. |
+|       | R@20  | R@50  | R@100 | R@20  | R@50  | R@100 |
+| SGGTR | 18.75 | 24.78 | 28.93 | 20.57 | 28.12 | 33.52 |
+
+
+Training logs can be found [here](https://github.com/MoChen-bop/SGGTR/blob/main/__old__/pdf/experiments.pdf).
 
 # Visualized Scene Graphs
 
